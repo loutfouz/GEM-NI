@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="275c91bc-3ca4-4f49-82a6-1deaf2756f48">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network" renderedChild="combine2">
+        <node name="color1" position="5.00,1.00" prototype="color.color" uuid="d9ce1738-1002-4fd6-ad0e-3305b8b5b741">
+            <port name="color" type="color" value="#5a73afcf"/>
+        </node>
+        <node name="color2" position="12.00,1.00" prototype="color.color" uuid="56fc029a-3130-4cfa-9d4f-ad0e312a1faf">
+            <port name="color" type="color" value="#9065aff7"/>
+        </node>
+        <node name="colorize1" position="2.00,3.00" prototype="corevector.colorize" uuid="2ff8dc8d-af58-41e4-aa7d-31fb97ab5b64">
+            <port name="stroke" type="color" value="#5d5d5dff"/>
+            <port name="strokeWidth" type="float" value="3.0"/>
+        </node>
+        <node name="colorize2" position="7.00,6.00" prototype="corevector.colorize" uuid="17732ca9-7536-414a-a06d-b58eb0809c63">
+            <port name="stroke" type="color" value="#5d5d5dff"/>
+            <port name="strokeWidth" type="float" value="1.0"/>
+        </node>
+        <node name="combine2" position="2.00,8.00" prototype="list.combine" uuid="1798143e-9654-4fcc-a6d5-e6c8a032b847"/>
+        <node name="ellipse1" position="1.00,1.00" prototype="corevector.ellipse" uuid="6c6a9aba-6244-4792-8f61-0b72d7909093">
+            <port name="position" type="point" value="-209.00,74.00"/>
+            <port name="width" type="float" value="50.0"/>
+            <port name="height" type="float" value="50.0"/>
+        </node>
+        <node name="grid1" position="0.00,-2.00" prototype="corevector.grid" uuid="1f929f3c-b0ad-4dab-bdee-38cee8721af9">
+            <port name="columns" type="int" value="4"/>
+            <port name="rows" type="int" value="3"/>
+            <port name="width" type="float" value="631.0"/>
+            <port name="height" type="float" value="574.0"/>
+        </node>
+        <node name="line1" position="9.00,1.00" prototype="corevector.line" uuid="f398158e-5df4-4047-a35a-f7c1bc0d4e86">
+            <port name="point1" type="point" value="-66.00,31.00"/>
+            <port name="point2" type="point" value="58.00,79.00"/>
+        </node>
+        <node name="pick1" position="-1.00,-1.00" prototype="list.pick" uuid="0917863b-e23c-4f64-8054-0320a0798106">
+            <port name="amount" type="int" value="20"/>
+            <port name="seed" type="int" value="-10"/>
+        </node>
+        <node name="random_numbers1" position="-5.00,-4.00" prototype="math.random_numbers" uuid="49787419-9430-4611-b534-35acbc69bdf8">
+            <port name="amount" type="int" value="8"/>
+            <port name="end" type="float" value="25.0"/>
+            <port name="seed" type="int" value="2"/>
+        </node>
+        <node name="random_numbers2" position="1.00,-4.00" prototype="math.random_numbers" uuid="967cf0e4-7f22-41b9-86fa-deee0db47c97">
+            <port name="amount" type="int" value="9"/>
+            <port name="start" type="float" value="25.0"/>
+            <port name="end" type="float" value="13.0"/>
+            <port name="seed" type="int" value="20"/>
+        </node>
+        <node name="random_numbers3" position="3.00,-1.00" prototype="math.random_numbers" uuid="c272f2b0-8a65-4cd7-b8e4-8dc1eda6f5a3">
+            <port name="amount" type="int" value="6"/>
+            <port name="end" type="float" value="71.0"/>
+            <port name="seed" type="int" value="2"/>
+        </node>
+        <node name="shape_on_path1" position="5.00,5.00" prototype="corevector.shape_on_path" uuid="63efe7a1-d197-4eb6-bfbe-6df91ba6441d">
+            <port name="amount" type="int" value="39"/>
+            <port name="alignment" type="string" value="trailing"/>
+            <port name="spacing" type="float" value="4.0"/>
+            <port name="baseline_offset" type="float" value="2.0"/>
+        </node>
+        <conn input="colorize1.fill" output="color1"/>
+        <conn input="shape_on_path1.shape" output="line1"/>
+        <conn input="combine2.list1" output="colorize1"/>
+        <conn input="colorize2.fill" output="color2"/>
+        <conn input="colorize2.stroke" output="color2"/>
+        <conn input="colorize2.shape" output="shape_on_path1"/>
+        <conn input="combine2.list3" output="colorize2"/>
+        <conn input="grid1.columns" output="random_numbers1"/>
+        <conn input="grid1.rows" output="random_numbers2"/>
+        <conn input="pick1.list" output="grid1"/>
+        <conn input="ellipse1.position" output="pick1"/>
+        <conn input="ellipse1.width" output="random_numbers3"/>
+        <conn input="ellipse1.height" output="random_numbers3"/>
+        <conn input="colorize1.shape" output="ellipse1"/>
+        <conn input="shape_on_path1.path" output="colorize1"/>
+    </node>
+</ndbx>

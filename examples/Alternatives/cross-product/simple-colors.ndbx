@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="9a60f48a-c87d-4d08-9857-26027e8fe6ed">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network" renderedChild="distance1">
+        <node name="colorize1" position="16.00,2.00" prototype="corevector.colorize" uuid="19adc3d9-543d-4f25-9e1a-27b25b7c882b"/>
+        <node name="combine1" position="15.00,8.00" prototype="list.combine" uuid="b9f8046e-c503-46f7-bdc4-1d06e8a7ff52"/>
+        <node name="distance1" position="8.00,4.00" prototype="math.distance" uuid="0ccddf6c-ef61-448d-af48-1a6e7ce837fd"/>
+        <node name="ellipse1" position="0.00,6.00" prototype="corevector.ellipse" uuid="c293ea22-e729-48e5-a84f-ef1492e2f472">
+            <port name="width" type="float" value="18.0"/>
+            <port name="height" type="float" value="11.0"/>
+        </node>
+        <node name="ellipse2" position="11.00,-2.00" prototype="corevector.ellipse" uuid="29ad20d9-4837-4dc4-9b73-dbf83355d853">
+            <port name="position" type="point" value="54.00,-11.00"/>
+            <port name="width" type="float" value="14.0"/>
+            <port name="height" type="float" value="29.0"/>
+        </node>
+        <node name="grid1" position="3.00,3.00" prototype="corevector.grid" uuid="0425a443-1d5d-4101-8037-faae0f972234">
+            <port name="width" type="float" value="379.0"/>
+            <port name="height" type="float" value="219.0"/>
+            <port name="position" type="point" value="45.00,-87.00"/>
+        </node>
+        <node name="integer1" position="1.00,1.00" prototype="math.integer" uuid="5599eea4-7708-40a8-9732-84b712cb339d">
+            <port name="value" type="int" value="18"/>
+        </node>
+        <node name="integer2" position="6.00,1.00" prototype="math.integer" uuid="bebb3319-9832-4c0a-93f9-8cbd48a24479">
+            <port name="value" type="int" value="4"/>
+        </node>
+        <node name="rgb_color1" position="16.00,-2.00" prototype="color.rgb_color" uuid="7fd5ca43-71d3-43c3-a01e-541e9b0a3b22"/>
+        <conn input="grid1.columns" output="integer1"/>
+        <conn input="grid1.rows" output="integer2"/>
+        <conn input="ellipse1.position" output="grid1"/>
+        <conn input="distance1.point1" output="grid1"/>
+        <conn input="distance1.point2" output="ellipse2"/>
+        <conn input="combine1.list1" output="ellipse2"/>
+        <conn input="ellipse1.width" output="distance1"/>
+        <conn input="ellipse1.height" output="distance1"/>
+        <conn input="colorize1.fill" output="rgb_color1"/>
+        <conn input="rgb_color1.green" output="distance1"/>
+        <conn input="colorize1.shape" output="ellipse1"/>
+        <conn input="combine1.list2" output="colorize1"/>
+        <conn input="rgb_color1.alpha" output="distance1"/>
+    </node>
+</ndbx>

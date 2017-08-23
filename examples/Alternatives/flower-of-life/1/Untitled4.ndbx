@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="0716533f-c9d7-4fa5-bd4c-89a1ab2e8717">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network" renderedChild="compound1">
+        <node name="compound1" position="12.00,10.00" prototype="corevector.compound" uuid="56dcd1a7-d1df-4c84-b5c1-40a969128d9a">
+            <port name="function" type="string" value="subtracted"/>
+        </node>
+        <node name="ellipse1" position="8.00,7.00" prototype="corevector.ellipse" uuid="e9119b5c-3209-4f61-a085-768449f649ba">
+            <port name="width" type="float" value="300.0"/>
+            <port name="height" type="float" value="300.0"/>
+        </node>
+        <node name="ellipse2" position="12.00,7.00" prototype="corevector.ellipse" uuid="2249c366-6cdd-41cb-9f75-d9bb81cc5bfc">
+            <port name="width" type="float" value="300.0"/>
+            <port name="height" type="float" value="300.0"/>
+        </node>
+        <node name="number1" position="8.00,2.00" prototype="math.number" uuid="6519363f-9d4b-48ee-88e2-3667e09029b0">
+            <port name="value" type="float" value="100.0"/>
+        </node>
+        <node name="point1" position="17.00,5.00" prototype="corevector.point" uuid="0e91bb42-5fe3-4246-b921-3847bdcf91ce"/>
+        <node name="polygon1" position="17.00,1.00" prototype="corevector.polygon" uuid="da12e59a-b13f-4c3d-bb45-fc9aebd50839">
+            <port name="radius" type="float" value="50.0"/>
+            <port name="sides" type="int" value="12"/>
+        </node>
+        <node name="subtract1" position="12.00,4.00" prototype="math.subtract" uuid="872c51d3-27d8-41e2-9b29-b14524a566e6">
+            <port name="value2" type="float" value="1.0"/>
+        </node>
+        <conn input="ellipse1.width" output="number1"/>
+        <conn input="ellipse1.height" output="number1"/>
+        <conn input="ellipse2.width" output="subtract1"/>
+        <conn input="ellipse2.height" output="subtract1"/>
+        <conn input="subtract1.value1" output="number1"/>
+        <conn input="point1.value" output="polygon1"/>
+        <conn input="ellipse1.position" output="point1"/>
+        <conn input="ellipse2.position" output="point1"/>
+        <conn input="compound1.shape1" output="ellipse1"/>
+        <conn input="compound1.shape2" output="ellipse2"/>
+    </node>
+</ndbx>

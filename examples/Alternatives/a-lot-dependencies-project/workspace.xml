@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<workspace>
+    <properties>
+        <property class="java.lang.Integer" name="MONITOR_ARRANGEMENT" value="2"/>
+    </properties>
+    <monitors>
+        <monitor number="0">
+            <documents>
+                <document path="1/ex1.ndbx">
+                    <properties>
+                        <property class="java.lang.Boolean" name="locked" value="true"/>
+                        <property class="java.lang.Boolean" name="sandboxed" value="false"/>
+                        <property class="java.lang.Boolean" name="movement" value="true"/>
+                    </properties>
+                </document>
+            </documents>
+        </monitor>
+        <monitor number="1">
+            <documents>
+                <document path="2/ex2.ndbx">
+                    <properties>
+                        <property class="java.lang.Boolean" name="locked" value="true"/>
+                        <property class="java.lang.Boolean" name="sandboxed" value="false"/>
+                        <property class="java.lang.Boolean" name="movement" value="true"/>
+                    </properties>
+                </document>
+            </documents>
+        </monitor>
+        <monitor number="2">
+            <documents>
+                <document path="3/ex3.ndbx">
+                    <properties>
+                        <property class="java.lang.Boolean" name="locked" value="true"/>
+                        <property class="java.lang.Boolean" name="sandboxed" value="false"/>
+                        <property class="java.lang.Boolean" name="movement" value="true"/>
+                    </properties>
+                </document>
+            </documents>
+        </monitor>
+    </monitors>
+</workspace>

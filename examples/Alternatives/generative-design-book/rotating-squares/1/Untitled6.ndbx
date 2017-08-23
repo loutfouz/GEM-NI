@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="0716533f-c9d7-4fa5-bd4c-89a1ab2e8717">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network" renderedChild="copy3">
+        <node name="connect2" position="-14.00,9.00" prototype="corevector.connect" uuid="24ed99ba-b999-481f-8a5e-0c1999fc1710"/>
+        <node name="copy1" position="-14.00,11.00" prototype="corevector.copy" uuid="aee5c4e5-67e3-48bb-933d-3992915b1f6c">
+            <port name="copies" type="int" value="50"/>
+            <port name="order" type="string" value="srt"/>
+            <port name="rotate" type="float" value="-2.0"/>
+            <port name="scale" type="point" value="-0.02,-0.02"/>
+        </node>
+        <node name="copy2" position="-14.00,13.00" prototype="corevector.copy" uuid="3e6d8985-6d6d-4599-95fe-cfd2b25c94f8">
+            <port name="copies" type="int" value="9"/>
+            <port name="translate" type="point" value="205.00,0.00"/>
+        </node>
+        <node name="copy3" position="-14.00,15.00" prototype="corevector.copy" uuid="e958875c-15ff-435a-8b57-dafb69ab1d0d">
+            <port name="copies" type="int" value="9"/>
+            <port name="translate" type="point" value="0.00,205.00"/>
+        </node>
+        <node name="make_numbers1" position="-15.00,5.00" prototype="math.make_numbers" uuid="b96bf5ae-1824-41f0-8322-9937d528d56a">
+            <port name="separator" type="string" value=","/>
+        </node>
+        <node name="make_numbers2" position="-10.00,5.00" prototype="math.make_numbers" uuid="323df5c7-a998-445d-a45d-8ce950004732">
+            <port name="separator" type="string" value=","/>
+        </node>
+        <node name="make_point1" position="-14.00,7.00" prototype="corevector.make_point" uuid="430e014a-7c8e-4614-973b-50dace5389d0"/>
+        <node name="string1" position="-15.00,3.00" prototype="string.string" uuid="89208772-f24e-4ad1-9fc2-a35270204f69">
+            <port name="value" type="string" value="-100,100,100,-100"/>
+        </node>
+        <node name="string2" position="-10.00,3.00" prototype="string.string" uuid="6ee40567-c8e3-4c73-b7c9-47443d926513">
+            <port name="value" type="string" value="-100,-100,100,100"/>
+        </node>
+        <conn input="make_numbers1.string" output="string1"/>
+        <conn input="make_numbers2.string" output="string2"/>
+        <conn input="make_point1.x" output="make_numbers1"/>
+        <conn input="make_point1.y" output="make_numbers2"/>
+        <conn input="connect2.points" output="make_point1"/>
+        <conn input="copy1.shape" output="connect2"/>
+        <conn input="copy2.shape" output="copy1"/>
+        <conn input="copy3.shape" output="copy2"/>
+    </node>
+</ndbx>

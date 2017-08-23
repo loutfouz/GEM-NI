@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="9426cfab-641a-47e3-9585-11e2a3424eba">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network">
+        <node name="network1" position="9.00,1.00" prototype="core.network" uuid="c7d9861a-6cac-42f3-8435-8eac683840dd">
+            <node name="arc1" position="5.00,0.00" prototype="corevector.arc" uuid="20f09c30-9a63-412c-8467-c04f8a3b8f28"/>
+            <node name="network1" position="-1.00,0.00" prototype="core.network" uuid="751f4e59-faa2-4da8-9655-cf21c4061f29">
+                <node name="arc3" position="-5.00,-2.00" prototype="corevector.arc" uuid="f3e4b42a-c652-40cc-a5b7-a30a3d34ee79"/>
+                <node name="arc4" position="-5.00,0.00" prototype="corevector.arc" uuid="60c2a671-ece3-4288-8a09-ada3e03da299"/>
+                <conn input="arc4.position" output="arc3"/>
+            </node>
+            <node name="network2" position="3.00,4.00" prototype="core.network" renderedChild="arc4" uuid="60783d3f-3ed7-4fb2-b849-7ec154edbcd8">
+                <node name="arc3" position="-1.00,2.00" prototype="corevector.arc" uuid="9bf222bc-ae0c-46aa-b513-6e6b202efc20"/>
+                <node name="arc4" position="-3.00,0.00" prototype="corevector.arc" uuid="ad1ff390-db7d-42d1-aa7e-06f2760489fc"/>
+                <conn input="arc3.position" output="arc4"/>
+            </node>
+            <node name="network3" position="8.00,3.00" prototype="core.network" renderedChild="arc3" uuid="24268513-3b33-4141-b72f-a08b4a3d0d2c">
+                <node name="arc2" position="3.00,1.00" prototype="corevector.arc" uuid="5a2f9436-e993-4cec-b852-4864060de8ea"/>
+                <node name="arc3" position="8.00,0.00" prototype="corevector.arc" uuid="7cb8e01e-da48-4ecf-9ed5-2c0b2ae245ed"/>
+                <port childReference="arc2.position" name="position" range="value" type="point" value="0.00,0.00" widget="point"/>
+                <conn input="arc3.position" output="arc2"/>
+            </node>
+            <conn input="network3.position" output="arc1"/>
+        </node>
+    </node>
+</ndbx>

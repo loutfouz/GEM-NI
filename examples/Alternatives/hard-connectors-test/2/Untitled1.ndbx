@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="224fc274-d9a4-41bf-962e-4cca8ce1aa91">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network" renderedChild="arc4">
+        <node name="arc1" position="1.00,2.00" prototype="corevector.arc" uuid="7e6ccc9c-7b5d-4121-aa06-545e3cca2eb7"/>
+        <node name="arc2" position="5.00,0.00" prototype="corevector.arc" uuid="644e3acf-d7d7-4f4b-85f4-7cd8daf6abaa"/>
+        <node name="arc3" position="5.00,5.00" prototype="corevector.arc" uuid="09f5799c-196f-48a9-9ef7-6438e866147c">
+            <port name="position" type="point" value="-2.00,0.00"/>
+        </node>
+        <node name="arc4" position="9.00,7.00" prototype="corevector.arc" uuid="c418d49e-5c3f-45fa-82b4-4d6a7f0f1fb2"/>
+        <conn input="arc3.position" output="arc1"/>
+        <conn input="arc4.position" output="arc3"/>
+    </node>
+</ndbx>

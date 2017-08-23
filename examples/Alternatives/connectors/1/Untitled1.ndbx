@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="6108aa75-23ca-4f67-b65d-0ea615944390">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network" renderedChild="align1">
+        <node name="align1" position="5.00,2.00" prototype="corevector.align" uuid="9d46e098-9356-44e1-8d7e-209eb470fb5d"/>
+        <node name="null1" position="-1.00,2.00" prototype="corevector.null" uuid="36c6086e-fdd1-4526-83ac-884c02fb96d5"/>
+        <node name="null2" position="3.00,4.00" prototype="corevector.null" uuid="a4f3536e-daf6-40d7-be0d-f44bff4a1bdd"/>
+        <node name="null3" position="-1.00,7.00" prototype="corevector.null" uuid="169b4897-aae8-493b-9a3f-6d60ab261330"/>
+        <conn input="null2.shape" output="null1"/>
+    </node>
+</ndbx>

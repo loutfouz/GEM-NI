@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="0716533f-c9d7-4fa5-bd4c-89a1ab2e8717">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network" renderedChild="rowxcol">
+        <node name="connect1" position="-6.00,6.00" prototype="corevector.connect" uuid="44072b65-79c4-4ffa-a0c3-5b241d04d446">
+            <port name="closed" type="boolean" value="false"/>
+        </node>
+        <node name="coordinates1" position="-6.00,4.00" prototype="math.coordinates" uuid="fd54945c-e11c-428b-b2a9-66500d248402">
+            <port name="distance" type="float" value="30.0"/>
+        </node>
+        <node name="copy1" position="-6.00,8.00" prototype="corevector.copy" uuid="e2ed15ea-e009-4b24-9b87-07f3a23460a8">
+            <port name="copies" type="int" value="10"/>
+            <port name="scale" type="point" value="-0.10,-0.10"/>
+        </node>
+        <node name="row" position="-6.00,10.00" prototype="corevector.copy" uuid="0b86ae95-710a-4a3e-9b44-98e5dfa4dfcd">
+            <port name="copies" type="int" value="10"/>
+            <port name="translate" type="point" value="60.00,0.00"/>
+        </node>
+        <node name="rowxcol" position="-6.00,12.00" prototype="corevector.copy" uuid="e69b347d-c115-43f3-b586-612391543286">
+            <port name="copies" type="int" value="10"/>
+            <port name="translate" type="point" value="0.00,60.00"/>
+        </node>
+        <node name="sample1" position="-6.00,2.00" prototype="math.sample" uuid="368ab64a-4b6a-4f39-a3ed-3ed163bf011f">
+            <port name="amount" type="int" value="60"/>
+            <port name="end" type="float" value="360.0"/>
+        </node>
+        <conn input="coordinates1.angle" output="sample1"/>
+        <conn input="connect1.points" output="coordinates1"/>
+        <conn input="copy1.shape" output="connect1"/>
+        <conn input="row.shape" output="copy1"/>
+        <conn input="rowxcol.shape" output="row"/>
+    </node>
+</ndbx>

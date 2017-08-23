@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="2ebd60b2-d5ac-4573-94e5-3f2cc53c6959">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network" renderedChild="colorize1">
+        <node name="colorize1" position="9.00,8.00" prototype="corevector.colorize" uuid="3dd19071-3c26-444e-b4d8-030c68cfd601">
+            <port name="fill" type="color" value="#6c0000ff"/>
+            <port name="stroke" type="color" value="#00008c72"/>
+        </node>
+        <node name="ellipse1" position="6.00,5.00" prototype="corevector.ellipse" uuid="38cf67bd-585b-42a7-a647-3a9bfb64e05c">
+            <port name="width" type="float" value="39.0"/>
+            <port name="height" type="float" value="28.0"/>
+        </node>
+        <node name="grid1" position="1.00,4.00" prototype="corevector.grid" uuid="da16089f-6f76-4121-bbb8-bd3ececfdedc">
+            <port name="width" type="float" value="659.0"/>
+            <port name="height" type="float" value="357.0"/>
+            <port name="position" type="point" value="7.00,20.00"/>
+        </node>
+        <node name="integer1" position="1.00,1.00" prototype="math.integer" uuid="af58f93b-2fd2-462a-8784-e8c9208e2251">
+            <port name="value" type="int" value="10"/>
+        </node>
+        <node name="integer2" position="6.00,1.00" prototype="math.integer" uuid="26663893-ad28-4eff-804c-fbaf4fc485e0">
+            <port name="value" type="int" value="6"/>
+        </node>
+        <node name="integer4" position="10.00,5.00" prototype="math.integer" uuid="e70590d2-77bc-4961-b190-7841cafae3b2">
+            <port name="value" type="int" value="10"/>
+        </node>
+        <node name="pick1" position="6.00,7.00" prototype="list.pick" uuid="9ef390bb-5698-4495-831f-ed33d743c8c4">
+            <port name="seed" type="int" value="21"/>
+        </node>
+        <node name="random_numbers1" position="10.00,1.00" prototype="math.random_numbers" uuid="61721b61-94e4-496d-9e67-2d90909c64d7">
+            <port name="amount" type="int" value="27"/>
+            <port name="end" type="float" value="170.0"/>
+            <port name="seed" type="int" value="15"/>
+        </node>
+        <node name="rgb_color1" position="10.00,3.00" prototype="color.rgb_color" uuid="d0f51733-74fc-45fd-b23b-c1b29dcdf4a6">
+            <port name="blue" type="float" value="25.0"/>
+            <port name="alpha" type="float" value="197.0"/>
+            <port name="range" type="float" value="204.0"/>
+        </node>
+        <conn input="grid1.columns" output="integer1"/>
+        <conn input="grid1.rows" output="integer2"/>
+        <conn input="pick1.list" output="ellipse1"/>
+        <conn input="pick1.amount" output="integer4"/>
+        <conn input="ellipse1.width" output="random_numbers1"/>
+        <conn input="ellipse1.height" output="random_numbers1"/>
+        <conn input="colorize1.shape" output="pick1"/>
+        <conn input="rgb_color1.red" output="random_numbers1"/>
+        <conn input="rgb_color1.green" output="random_numbers1"/>
+        <conn input="colorize1.fill" output="rgb_color1"/>
+        <conn input="ellipse1.position" output="grid1"/>
+    </node>
+</ndbx>

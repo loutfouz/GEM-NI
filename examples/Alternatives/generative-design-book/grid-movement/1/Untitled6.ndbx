@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="53f39622-55f7-4387-974a-f10eee931a21">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network" renderedChild="compound1">
+        <node name="compound1" position="9.00,18.00" prototype="corevector.compound" uuid="c4ab00db-c421-43bd-9663-a1d0b4401cbe">
+            <port name="function" type="string" value="subtracted"/>
+        </node>
+        <node name="ellipse1" position="9.00,7.00" prototype="corevector.ellipse" uuid="c76e2533-d86a-4b7a-9842-9a7aabf6eb34">
+            <port name="width" type="float" value="20.0"/>
+            <port name="height" type="float" value="20.0"/>
+        </node>
+        <node name="ellipse2" position="16.00,15.00" prototype="corevector.ellipse" uuid="8dca772b-8b63-49dd-9518-60f54e25b9ea">
+            <port name="width" type="float" value="10.0"/>
+            <port name="height" type="float" value="10.0"/>
+        </node>
+        <node name="grid1" position="9.00,0.00" prototype="corevector.grid" uuid="632822cd-6683-4f2a-9b9c-5d76bfc586f5"/>
+        <node name="wiggle1" position="9.00,2.00" prototype="corevector.wiggle" uuid="5c1773e2-0452-4a7c-a835-9a08588c005d">
+            <port name="seed" type="int" value="1"/>
+        </node>
+        <conn input="wiggle1.shape" output="grid1"/>
+        <conn input="compound1.shape1" output="ellipse1"/>
+        <conn input="compound1.shape2" output="ellipse2"/>
+        <conn input="ellipse1.position" output="wiggle1"/>
+        <conn input="ellipse2.position" output="wiggle1"/>
+    </node>
+</ndbx>

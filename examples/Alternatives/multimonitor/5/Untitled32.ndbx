@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="0716533f-c9d7-4fa5-bd4c-89a1ab2e8717">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network" renderedChild="rotate1">
+        <node name="connect1" position="-6.00,6.00" prototype="corevector.connect" uuid="44072b65-79c4-4ffa-a0c3-5b241d04d446">
+            <port name="closed" type="boolean" value="false"/>
+        </node>
+        <node name="coordinates1" position="-6.00,4.00" prototype="math.coordinates" uuid="fd54945c-e11c-428b-b2a9-66500d248402"/>
+        <node name="polygon1" position="-2.00,6.00" prototype="corevector.polygon" uuid="4bad65a5-0d14-4b26-a001-a03a5d9aed6a">
+            <port name="sides" type="int" value="6"/>
+            <port name="align" type="boolean" value="true"/>
+        </node>
+        <node name="polygon2" position="-2.00,4.00" prototype="corevector.polygon" uuid="465a0a95-11f4-47e4-a349-184ae4dd0498">
+            <port name="sides" type="int" value="6"/>
+            <port name="align" type="boolean" value="true"/>
+        </node>
+        <node name="polygon3" position="-2.00,2.00" prototype="corevector.polygon" uuid="08debfc1-4fa5-4471-a054-3f0977f99dd5">
+            <port name="sides" type="int" value="6"/>
+            <port name="align" type="boolean" value="true"/>
+        </node>
+        <node name="rect1" position="-2.00,0.00" prototype="corevector.rect" uuid="b80015b2-9073-41f8-9eee-126163a99434">
+            <port name="width" type="float" value="800.0"/>
+        </node>
+        <node name="rotate1" position="-6.00,10.00" prototype="corevector.rotate" uuid="060d12b6-857e-4c48-859e-91c3c1a42a42">
+            <port name="angle" type="float" value="30.0"/>
+        </node>
+        <node name="sample1" position="-6.00,2.00" prototype="math.sample" uuid="368ab64a-4b6a-4f39-a3ed-3ed163bf011f">
+            <port name="amount" type="int" value="60"/>
+            <port name="end" type="float" value="360.0"/>
+        </node>
+        <node name="shape_on_path1" position="-6.00,8.00" prototype="corevector.shape_on_path" uuid="499193a2-e6ad-4517-bc36-257ca2670f4c">
+            <port name="amount" type="int" value="12"/>
+            <port name="alignment" type="string" value="distributed"/>
+            <port name="spacing" type="float" value="0.0"/>
+            <port name="margin" type="float" value="25.0"/>
+        </node>
+        <conn input="coordinates1.angle" output="sample1"/>
+        <conn input="connect1.points" output="coordinates1"/>
+        <conn input="shape_on_path1.shape" output="connect1"/>
+        <conn input="polygon1.position" output="polygon2"/>
+        <conn input="polygon2.position" output="polygon3"/>
+        <conn input="shape_on_path1.path" output="polygon1"/>
+        <conn input="rotate1.shape" output="shape_on_path1"/>
+        <conn input="polygon3.position" output="rect1"/>
+    </node>
+</ndbx>

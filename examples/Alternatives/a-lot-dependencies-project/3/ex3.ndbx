@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="51996bc3-549b-42c1-9694-24edf8136346">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network" renderedChild="arc1">
+        <node name="arc1" position="2.00,4.00" prototype="corevector.arc" uuid="7665e598-ff67-4b5f-a488-024e98c8e725">
+            <port name="width" type="float" value="58.0"/>
+            <port name="height" type="float" value="119.0"/>
+        </node>
+        <node name="combine1" position="5.00,8.00" prototype="list.combine" uuid="e589772f-e761-41e2-8b8e-f62e25f3d3dc"/>
+        <node name="ellipse1" position="2.00,1.00" prototype="corevector.ellipse" uuid="f70ad6da-8d30-49f2-86e0-d2a1f05d05d2">
+            <port name="position" type="point" value="-67.00,26.00"/>
+            <port name="width" type="float" value="256.0"/>
+            <port name="height" type="float" value="250.0"/>
+        </node>
+        <node name="ellipse2" position="8.00,1.00" prototype="corevector.ellipse" uuid="0ef06898-0d73-45b7-a384-236d0068ec5b">
+            <port name="position" type="point" value="-366.00,26.00"/>
+            <port name="width" type="float" value="357.0"/>
+            <port name="height" type="float" value="250.0"/>
+        </node>
+        <conn input="arc1.position" output="ellipse1"/>
+        <conn input="combine1.list1" output="arc1"/>
+        <conn input="combine1.list3" output="ellipse2"/>
+    </node>
+</ndbx>

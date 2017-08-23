@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="3226097b-4c15-4de0-ada0-3ac3e89c6069">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network" renderedChild="arc1">
+        <node name="arc1" position="3.00,1.00" prototype="corevector.arc" uuid="f9f35af3-a134-43db-9732-cbeb94c7b71c"/>
+    </node>
+</ndbx>

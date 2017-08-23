@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="71248dc7-53f8-42cc-83db-f6fed43f2775">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <link href="python:../../LSystem/lsystem.py" rel="functions"/>
+    <node name="root" prototype="core.network" renderedChild="lsystem">
+        <node category="geometry" function="lsystem/cook" image="" name="lsystem" outputType="geometry" position="22.00,2.00" uuid="12e60316-72f4-45f4-8d00-e91bc98f4ab6">
+            <port min="0.0" name="generations" range="value" type="int" value="8" widget="int"/>
+            <port name="x" range="value" type="float" value="0.0" widget="float"/>
+            <port name="y" range="value" type="float" value="0.0" widget="float"/>
+            <port name="angle" range="value" type="float" value="60.0" widget="float"/>
+            <port name="angleScale" range="value" type="float" value="0.0" widget="float"/>
+            <port name="length" range="value" type="float" value="10.0" widget="float"/>
+            <port name="thicknessScale" range="value" type="float" value="0.0" widget="float"/>
+            <port name="lengthScale" range="value" type="float" value="0.0" widget="float"/>
+            <port name="premise" range="value" type="string" value="A" widget="string"/>
+            <port name="rule1" range="value" type="string" value="A=B-A-B" widget="string"/>
+            <port name="rule2" range="value" type="string" value="B=A+B+A" widget="string"/>
+            <port name="rule3" range="value" type="string" value="" widget="string"/>
+        </node>
+    </node>
+</ndbx>

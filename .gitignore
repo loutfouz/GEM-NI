@@ -1,0 +1,30 @@
+# Build directories
+build
+dist
+out
+reports
+/bin
+target
+autosave
+
+# Mac OS X custom attribute files
+.DS_Store
+._.DS_Store
+
+# Windows thumbnails
+Thumbs.db
+
+# IntelliJ project files
+*.i[mpw][lrs]
+.idea
+
+# Jython package cache and compiled files
+lib/cachedir
+*$py.class
+
+# Eclipse
+.settings
+
+#log
+*.log
+*.log.lck

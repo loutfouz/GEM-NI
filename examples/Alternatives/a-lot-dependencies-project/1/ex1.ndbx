@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="a83452c0-7892-4ded-a3ac-d0d2611d2b2d">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network" renderedChild="arc1">
+        <node name="arc1" position="2.00,4.00" prototype="corevector.arc" uuid="7665e598-ff67-4b5f-a488-024e98c8e725">
+            <port name="width" type="float" value="82.0"/>
+            <port name="height" type="float" value="119.0"/>
+            <port name="start_angle" type="float" value="37.0"/>
+        </node>
+        <node name="combine1" position="5.00,8.00" prototype="list.combine" uuid="e589772f-e761-41e2-8b8e-f62e25f3d3dc"/>
+        <node name="ellipse1" position="2.00,1.00" prototype="corevector.ellipse" uuid="f70ad6da-8d30-49f2-86e0-d2a1f05d05d2">
+            <port name="position" type="point" value="-39.00,49.00"/>
+            <port name="width" type="float" value="378.0"/>
+            <port name="height" type="float" value="250.0"/>
+        </node>
+        <node name="ellipse2" position="8.00,1.00" prototype="corevector.ellipse" uuid="0ef06898-0d73-45b7-a384-236d0068ec5b">
+            <port name="position" type="point" value="-366.00,26.00"/>
+            <port name="width" type="float" value="374.0"/>
+            <port name="height" type="float" value="322.0"/>
+        </node>
+        <node name="rect1" position="8.00,4.00" prototype="corevector.rect" uuid="370daa82-c33b-484d-860b-d705cb14e78b">
+            <port name="width" type="float" value="47.0"/>
+            <port name="height" type="float" value="91.0"/>
+            <port name="roundness" type="point" value="12.00,64.00"/>
+        </node>
+        <conn input="arc1.position" output="ellipse1"/>
+        <conn input="combine1.list2" output="rect1"/>
+        <conn input="combine1.list1" output="arc1"/>
+        <conn input="combine1.list3" output="ellipse2"/>
+    </node>
+</ndbx>

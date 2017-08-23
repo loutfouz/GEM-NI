@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="72afa6ca-7722-46aa-b9b4-5b9d08416e54">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network" renderedChild="colorize1">
+        <node name="colorize1" position="21.00,11.00" prototype="corevector.colorize" uuid="fd093b38-aec9-45e1-a491-88846829c1aa"/>
+        <node name="divide1" position="23.00,0.00" prototype="math.divide" uuid="6d299bcb-005e-4879-8804-4e6da6c3cf5b">
+            <port name="value1" type="float" value="255.0"/>
+            <port name="value2" type="float" value="1.5"/>
+        </node>
+        <node name="gapsize" prototype="math.number" uuid="e6919003-0fab-4a9a-aeb2-e97ca02366c2">
+            <port name="value" type="float" value="30.0"/>
+        </node>
+        <node name="hsb_color1" position="21.00,8.00" prototype="color.hsb_color" uuid="e7d96f6c-31c5-4e21-9c2d-b776601d056a">
+            <port name="saturation" type="float" value="255.0"/>
+            <port name="brightness" type="float" value="255.0"/>
+        </node>
+        <node name="hue" position="23.00,3.00" prototype="math.number" uuid="f551c4ff-6129-417d-b0a6-8a84109dd2ef">
+            <port name="value" type="float" value="29.0"/>
+        </node>
+        <node name="make_point1" position="5.00,7.00" prototype="corevector.make_point" uuid="32158f03-92f2-43ce-9eea-a966c786ccd7"/>
+        <node name="multiply1" position="1.00,5.00" prototype="math.multiply" uuid="9ddba530-81be-4a01-8949-6bb530e02e94"/>
+        <node name="multiply2" position="7.00,5.00" prototype="math.multiply" uuid="d2f9a95b-1c11-4451-8f10-8a9b8e9d4ed4"/>
+        <node name="multiply3" position="19.00,5.00" prototype="math.multiply" uuid="531c0088-ec5b-4f40-86f4-85bba50c2480"/>
+        <node name="range1" position="7.00,1.00" prototype="math.range" uuid="696812b1-8b08-4146-965e-70f422de029b">
+            <port name="end" type="float" value="11.0"/>
+        </node>
+        <node name="rect1" position="5.00,10.00" prototype="corevector.rect" uuid="d40ab7e6-98d4-4685-b856-64cc091f18ff">
+            <port name="width" type="float" value="30.0"/>
+            <port name="height" type="float" value="30.0"/>
+        </node>
+        <node name="repeat1" position="13.00,3.00" prototype="list.repeat" uuid="2d8cd8e3-111a-412f-a905-361d9685fcab">
+            <port name="amount" type="int" value="10"/>
+        </node>
+        <node name="repeat2" position="8.00,3.00" prototype="list.repeat" uuid="f838efda-65dc-4ea4-b495-dfd4ba12af23">
+            <port name="amount" type="int" value="10"/>
+            <port name="per_item" type="boolean" value="true"/>
+        </node>
+        <node name="rows" position="8.00,-1.00" prototype="math.number" uuid="97d3c989-ef03-4d35-89b7-8fd5d16ae84a">
+            <port name="value" type="float" value="10.0"/>
+        </node>
+        <conn input="repeat1.list" output="range1"/>
+        <conn input="repeat2.list" output="range1"/>
+        <conn input="multiply2.value1" output="repeat2"/>
+        <conn input="multiply1.value1" output="repeat1"/>
+        <conn input="make_point1.x" output="multiply1"/>
+        <conn input="make_point1.y" output="multiply2"/>
+        <conn input="colorize1.fill" output="hsb_color1"/>
+        <conn input="multiply3.value2" output="repeat1"/>
+        <conn input="hsb_color1.hue" output="multiply3"/>
+        <conn input="multiply3.value1" output="hue"/>
+        <conn input="multiply2.value2" output="gapsize"/>
+        <conn input="multiply1.value2" output="gapsize"/>
+        <conn input="colorize1.shape" output="rect1"/>
+        <conn input="rect1.position" output="make_point1"/>
+        <conn input="rect1.width" output="gapsize"/>
+        <conn input="rect1.height" output="gapsize"/>
+        <conn input="repeat1.amount" output="rows"/>
+        <conn input="repeat2.amount" output="rows"/>
+        <conn input="range1.end" output="rows"/>
+        <conn input="hue.value" output="divide1"/>
+        <conn input="divide1.value2" output="rows"/>
+    </node>
+</ndbx>

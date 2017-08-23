@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="816a5bc1-be8a-4dfa-a619-0566aa83ca2c">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network" renderedChild="grid1">
+        <node name="grid1" position="2.00,3.00" prototype="corevector.grid" uuid="4aec1d63-bbe3-4892-ba98-9144af19164a"/>
+        <node name="integer1" position="1.00,1.00" prototype="math.integer" uuid="0feca455-d7e7-4617-9a98-b04273f9adb9">
+            <port name="value" type="int" value="3"/>
+        </node>
+        <node name="integer2" position="4.00,1.00" prototype="math.integer" uuid="1f49834c-304d-4db0-9f64-4fa09d9bc575">
+            <port name="value" type="int" value="6"/>
+        </node>
+        <node name="integer3" position="7.00,1.00" prototype="math.integer" uuid="a0736694-1b3c-4ba9-a5e2-5d6060505bc8">
+            <port name="value" type="int" value="5"/>
+        </node>
+        <node name="polygon1" position="5.00,5.00" prototype="corevector.polygon" uuid="42076a93-efc9-49d2-9054-d8d8f8ddd213">
+            <port name="radius" type="float" value="48.0"/>
+        </node>
+        <conn input="grid1.columns" output="integer1"/>
+        <conn input="grid1.rows" output="integer2"/>
+        <conn input="polygon1.position" output="grid1"/>
+        <conn input="polygon1.sides" output="integer3"/>
+    </node>
+</ndbx>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="3dcd2239-e907-42be-ae9f-ce70a3b4dcd0">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network" renderedChild="colorize1">
+        <node name="PiOver" position="7.00,3.00" prototype="math.divide" uuid="e53f5efe-c637-4718-9ae9-2db717db205d">
+            <port name="value1" type="float" value="360.0"/>
+        </node>
+        <node name="arc1" position="8.00,7.00" prototype="corevector.arc" uuid="3a255ea3-c41e-4221-bb41-c327f623e366"/>
+        <node name="colorize1" position="13.00,9.00" prototype="corevector.colorize" uuid="a79c0ffa-846d-4b80-9302-24721483e78d"/>
+        <node name="divide1" position="15.00,0.00" prototype="math.divide" uuid="e76525f8-bc80-41f3-8f5b-3272ea6e7523">
+            <port name="value1" type="float" value="255.0"/>
+        </node>
+        <node name="hsb_color1" position="14.00,4.00" prototype="color.hsb_color" uuid="8cd34a9d-e292-4e6b-8c2a-aff7d4d9389d">
+            <port name="saturation" type="float" value="255.0"/>
+            <port name="brightness" type="float" value="255.0"/>
+        </node>
+        <node name="number1" position="7.00,1.00" prototype="math.number" uuid="0dc51eba-ce6c-4084-870d-055d1a6e1a70">
+            <port name="value" type="float" value="34.0"/>
+        </node>
+        <node name="range1" position="4.00,5.00" prototype="math.range" uuid="616c5740-bebb-404e-9dbc-28a7e55ce81d">
+            <port name="end" type="float" value="360.0"/>
+        </node>
+        <node name="range2" position="15.00,2.00" prototype="math.range" uuid="2dbc90bc-9668-41c5-95b5-af05d048ac1e">
+            <port name="end" type="float" value="255.0"/>
+        </node>
+        <conn input="PiOver.value2" output="number1"/>
+        <conn input="arc1.degrees" output="PiOver"/>
+        <conn input="colorize1.fill" output="hsb_color1"/>
+        <conn input="range1.step" output="PiOver"/>
+        <conn input="arc1.start_angle" output="range1"/>
+        <conn input="colorize1.shape" output="arc1"/>
+        <conn input="hsb_color1.hue" output="range2"/>
+        <conn input="divide1.value2" output="number1"/>
+        <conn input="range2.step" output="divide1"/>
+    </node>
+</ndbx>

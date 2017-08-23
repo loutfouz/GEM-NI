@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="0716533f-c9d7-4fa5-bd4c-89a1ab2e8717">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network" renderedChild="copy7">
+        <node name="combine1" position="3.00,12.00" prototype="list.combine" uuid="853dc07f-d0b0-4572-b415-8ffca9be2f99"/>
+        <node name="combine2" position="7.00,14.00" prototype="list.combine" uuid="08d7a0e7-4059-43d7-92e1-fa79fad04674"/>
+        <node name="connect1" position="-6.00,6.00" prototype="corevector.connect" uuid="44072b65-79c4-4ffa-a0c3-5b241d04d446">
+            <port name="closed" type="boolean" value="false"/>
+        </node>
+        <node name="coordinates1" position="-6.00,4.00" prototype="math.coordinates" uuid="fd54945c-e11c-428b-b2a9-66500d248402">
+            <port name="distance" type="float" value="30.0"/>
+        </node>
+        <node name="copy1" position="-6.00,8.00" prototype="corevector.copy" uuid="e2ed15ea-e009-4b24-9b87-07f3a23460a8">
+            <port name="copies" type="int" value="7"/>
+            <port name="translate" type="point" value="2.00,0.00"/>
+            <port name="scale" type="point" value="-0.10,-0.10"/>
+        </node>
+        <node name="copy2" position="-1.00,8.00" prototype="corevector.copy" uuid="969a3841-2eff-4c63-9dfa-34e4b781cf28">
+            <port name="copies" type="int" value="7"/>
+            <port name="translate" type="point" value="0.00,2.00"/>
+            <port name="scale" type="point" value="-0.10,-0.10"/>
+        </node>
+        <node name="copy3" position="4.00,8.00" prototype="corevector.copy" uuid="046eef1c-f6f8-4c70-8ffd-d664f4623243">
+            <port name="copies" type="int" value="7"/>
+            <port name="translate" type="point" value="-2.00,0.00"/>
+            <port name="scale" type="point" value="-0.10,-0.10"/>
+        </node>
+        <node name="copy4" position="9.00,8.00" prototype="corevector.copy" uuid="38a32a21-5b04-4303-ad9f-b104638ae62e">
+            <port name="copies" type="int" value="7"/>
+            <port name="translate" type="point" value="0.00,-2.00"/>
+            <port name="scale" type="point" value="-0.10,-0.10"/>
+        </node>
+        <node name="copy5" position="7.00,16.00" prototype="corevector.copy" uuid="5ff66850-3b1d-4ba6-a965-77266d1032a7">
+            <port name="copies" type="int" value="3"/>
+            <port name="translate" type="point" value="0.00,60.00"/>
+        </node>
+        <node name="copy6" position="7.00,18.00" prototype="corevector.copy" uuid="ed4fe886-5795-4d3c-ba55-0a63064ff945">
+            <port name="copies" type="int" value="2"/>
+            <port name="translate" type="point" value="0.00,180.00"/>
+        </node>
+        <node name="copy7" position="7.00,20.00" prototype="corevector.copy" uuid="71493710-db2e-48ad-8cf9-65000f18a860">
+            <port name="copies" type="int" value="2"/>
+            <port name="translate" type="point" value="240.00,0.00"/>
+        </node>
+        <node name="sample1" position="-6.00,2.00" prototype="math.sample" uuid="368ab64a-4b6a-4f39-a3ed-3ed163bf011f">
+            <port name="amount" type="int" value="60"/>
+            <port name="end" type="float" value="360.0"/>
+        </node>
+        <node name="translate1" position="-1.00,10.00" prototype="corevector.translate" uuid="c019bc0f-51b1-4b95-bf15-48be4ea038ac">
+            <port name="translate" type="point" value="60.00,0.00"/>
+        </node>
+        <node name="translate2" position="4.00,10.00" prototype="corevector.translate" uuid="fa15cc56-c3fb-44ec-9690-609ce1ad7733">
+            <port name="translate" type="point" value="120.00,0.00"/>
+        </node>
+        <node name="translate3" position="9.00,10.00" prototype="corevector.translate" uuid="7b34b125-b3af-4b66-b00c-a87d3da7e992">
+            <port name="translate" type="point" value="180.00,0.00"/>
+        </node>
+        <conn input="coordinates1.angle" output="sample1"/>
+        <conn input="connect1.points" output="coordinates1"/>
+        <conn input="copy1.shape" output="connect1"/>
+        <conn input="copy2.shape" output="connect1"/>
+        <conn input="copy3.shape" output="connect1"/>
+        <conn input="copy4.shape" output="connect1"/>
+        <conn input="translate1.shape" output="copy2"/>
+        <conn input="translate2.shape" output="copy3"/>
+        <conn input="translate3.shape" output="copy4"/>
+        <conn input="combine1.list1" output="copy1"/>
+        <conn input="combine1.list2" output="translate1"/>
+        <conn input="combine1.list3" output="translate2"/>
+        <conn input="combine2.list1" output="combine1"/>
+        <conn input="combine2.list2" output="translate3"/>
+        <conn input="copy5.shape" output="combine2"/>
+        <conn input="copy6.shape" output="copy5"/>
+        <conn input="copy7.shape" output="copy6"/>
+    </node>
+</ndbx>

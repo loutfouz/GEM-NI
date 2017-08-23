@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="0716533f-c9d7-4fa5-bd4c-89a1ab2e8717">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network" renderedChild="shape_on_path1">
+        <node name="connect1" position="-6.00,6.00" prototype="corevector.connect" uuid="44072b65-79c4-4ffa-a0c3-5b241d04d446">
+            <port name="closed" type="boolean" value="false"/>
+        </node>
+        <node name="coordinates1" position="-6.00,4.00" prototype="math.coordinates" uuid="fd54945c-e11c-428b-b2a9-66500d248402"/>
+        <node name="sample1" position="-6.00,2.00" prototype="math.sample" uuid="368ab64a-4b6a-4f39-a3ed-3ed163bf011f">
+            <port name="amount" type="int" value="60"/>
+            <port name="end" type="float" value="360.0"/>
+        </node>
+        <node name="shape_on_path1" position="-6.00,8.00" prototype="corevector.shape_on_path" uuid="499193a2-e6ad-4517-bc36-257ca2670f4c">
+            <port name="amount" type="int" value="50"/>
+            <port name="alignment" type="string" value="distributed"/>
+            <port name="spacing" type="float" value="0.0"/>
+            <port name="margin" type="float" value="25.0"/>
+        </node>
+        <conn input="coordinates1.angle" output="sample1"/>
+        <conn input="connect1.points" output="coordinates1"/>
+        <conn input="shape_on_path1.shape" output="connect1"/>
+        <conn input="shape_on_path1.path" output="connect1"/>
+    </node>
+</ndbx>

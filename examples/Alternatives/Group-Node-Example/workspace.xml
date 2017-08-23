@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<workspace>
+    <properties>
+        <property class="java.lang.Integer" name="MONITOR_ARRANGEMENT" value="0"/>
+    </properties>
+    <monitors>
+        <monitor number="0">
+            <documents>
+                <document path="1/Flower of Life.ndbx">
+                    <properties>
+                        <property class="java.lang.Boolean" name="locked" value="true"/>
+                        <property class="java.lang.Boolean" name="sandboxed" value="false"/>
+                        <property class="java.lang.Boolean" name="movement" value="true"/>
+                    </properties>
+                </document>
+                <document path="1/Untitled5.ndbx">
+                    <properties>
+                        <property class="java.lang.Boolean" name="locked" value="true"/>
+                        <property class="java.lang.Boolean" name="sandboxed" value="false"/>
+                        <property class="java.lang.Boolean" name="movement" value="true"/>
+                    </properties>
+                </document>
+                <document path="1/Untitled6.ndbx">
+                    <properties>
+                        <property class="java.lang.Boolean" name="locked" value="true"/>
+                        <property class="java.lang.Boolean" name="sandboxed" value="false"/>
+                        <property class="java.lang.Boolean" name="movement" value="true"/>
+                    </properties>
+                </document>
+            </documents>
+        </monitor>
+    </monitors>
+</workspace>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="71248dc7-53f8-42cc-83db-f6fed43f2775">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <link href="python:../../../LSystem Split/lsystem.py" rel="functions"/>
+    <link href="python:../../../LSystem Split/lrules.py" rel="functions"/>
+    <link href="python:../../../LSystem Split/lgeometry.py" rel="functions"/>
+    <link href="python:../../../LSystem Split/lpath.py" rel="functions"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node name="combine1" position="26.00,16.00" prototype="list.combine" uuid="9e82c625-6e1d-4963-9629-f0e9542c9948"/>
+        <node name="divide1" position="12.00,2.00" prototype="math.divide" uuid="aed9939f-2f62-4995-bfd3-909f881b341f">
+            <port name="value2" type="float" value="-2.0"/>
+        </node>
+        <node name="divide2" position="27.00,3.00" prototype="math.divide" uuid="e804a662-555b-46c3-93d7-d15d60870f15">
+            <port name="value2" type="float" value="-2.0"/>
+        </node>
+        <node name="group1" position="23.00,12.00" prototype="corevector.group" uuid="9e08dd59-fd67-4adf-a597-843f4a49f355"/>
+        <node name="group2" position="31.00,13.00" prototype="corevector.group" uuid="19d4935a-fc81-4eff-8fd7-1e4d1ee04ec0"/>
+        <node name="length" position="16.00,-2.00" prototype="math.number" uuid="8fac32de-be38-4ed2-9102-684a02addbbb">
+            <port name="value" type="float" value="10.0"/>
+        </node>
+        <node name="length1" position="31.00,-1.00" prototype="math.number" uuid="63549e0a-2b1f-4c1c-86c8-ad1673c23384">
+            <port name="value" type="float" value="10.0"/>
+        </node>
+        <node category="geometry" function="lgeometry/lgeometry" image="lsystem.png" name="lgeometry" outputType="geometry" position="20.00,8.00" uuid="12e60316-72f4-45f4-8d00-e91bc98f4ab6">
+            <port name="x" range="value" type="float" value="0.0" widget="float"/>
+            <port name="y" range="value" type="float" value="0.0" widget="float"/>
+            <port name="angle" range="value" type="float" value="90.0" widget="float"/>
+            <port name="angleScale" range="value" type="float" value="0.0" widget="float"/>
+            <port name="length" range="value" type="float" value="9.0" widget="float"/>
+            <port name="thicknessScale" range="value" type="float" value="0.0" widget="float"/>
+            <port name="lengthScale" range="value" type="float" value="0.0" widget="float"/>
+            <port name="fullRule" range="value" type="string" value="" widget="string"/>
+            <port name="geometry" range="value" type="geometry" widget="none"/>
+        </node>
+        <node category="geometry" function="lgeometry/lgeometry" image="lsystem.png" name="lgeometry1" outputType="geometry" position="35.00,9.00" uuid="083ac10c-2f27-4784-a7f6-e34131fd7f38">
+            <port name="x" range="value" type="float" value="365.0" widget="float"/>
+            <port name="y" range="value" type="float" value="1900.0" widget="float"/>
+            <port name="angle" range="value" type="float" value="95.0" widget="float"/>
+            <port name="angleScale" range="value" type="float" value="0.0" widget="float"/>
+            <port name="length" range="value" type="float" value="9.0" widget="float"/>
+            <port name="thicknessScale" range="value" type="float" value="0.0" widget="float"/>
+            <port name="lengthScale" range="value" type="float" value="0.0" widget="float"/>
+            <port name="fullRule" range="value" type="string" value="" widget="string"/>
+            <port name="geometry" range="value" type="geometry" widget="none"/>
+        </node>
+        <node category="geometry" function="lrules/lrules" image="lsystem.png" name="lrules" outputType="geometry" position="23.00,0.00" uuid="f22b24ac-dcad-4faf-ac4b-5f4f29199300">
+            <port min="0.0" name="generations" range="value" type="int" value="12" widget="int"/>
+            <port name="premise" range="value" type="string" value="FX" widget="string"/>
+            <port name="rule1" range="value" type="string" value="X=X+YF" widget="string"/>
+            <port name="rule2" range="value" type="string" value="Y=FX-Y" widget="string"/>
+            <port name="rule3" range="value" type="string" value="" widget="string"/>
+        </node>
+        <node category="geometry" function="lrules/lrules" image="lsystem.png" name="lrules1" outputType="geometry" position="38.00,1.00" uuid="b252cf47-c8a8-4e06-9a19-5688bf3c8f4d">
+            <port min="0.0" name="generations" range="value" type="int" value="8" widget="int"/>
+            <port name="premise" range="value" type="string" value="FX" widget="string"/>
+            <port name="rule1" range="value" type="string" value="X=X+YF" widget="string"/>
+            <port name="rule2" range="value" type="string" value="Y=FX-Y" widget="string"/>
+            <port name="rule3" range="value" type="string" value="" widget="string"/>
+        </node>
+        <node name="make_point1" position="13.00,4.00" prototype="corevector.make_point" uuid="191cd95c-9d31-466b-a202-cb4bea2b270c"/>
+        <node name="make_point2" position="28.00,5.00" prototype="corevector.make_point" uuid="2a2e49f4-3db2-457e-be61-a70df94f5525"/>
+        <node name="rect1" position="15.00,6.00" prototype="corevector.rect" uuid="bfeffa62-7e6c-432a-a778-3348934eb992">
+            <port name="width" type="float" value="2.0"/>
+        </node>
+        <node name="rect2" position="30.00,7.00" prototype="corevector.rect" uuid="5e8c76c2-e8ab-41e2-8a65-44019d82c116">
+            <port name="width" type="float" value="2.0"/>
+        </node>
+        <node name="rotate1" position="21.00,14.00" prototype="corevector.rotate" uuid="205315b3-8839-4512-b8ce-4976e81d2ccd">
+            <port name="angle" type="float" value="-26.0"/>
+        </node>
+        <conn input="lgeometry.fullRule" output="lrules"/>
+        <conn input="divide1.value1" output="length"/>
+        <conn input="lgeometry.geometry" output="rect1"/>
+        <conn input="lgeometry.length" output="length"/>
+        <conn input="rect1.height" output="length"/>
+        <conn input="make_point1.y" output="divide1"/>
+        <conn input="rect1.position" output="make_point1"/>
+        <conn input="lgeometry1.fullRule" output="lrules1"/>
+        <conn input="divide2.value1" output="length1"/>
+        <conn input="lgeometry1.geometry" output="rect2"/>
+        <conn input="lgeometry1.length" output="length1"/>
+        <conn input="rect2.height" output="length1"/>
+        <conn input="make_point2.y" output="divide2"/>
+        <conn input="rect2.position" output="make_point2"/>
+        <conn input="group2.shapes" output="lgeometry1"/>
+        <conn input="group1.shapes" output="lgeometry"/>
+        <conn input="combine1.list2" output="group2"/>
+        <conn input="rotate1.shape" output="group1"/>
+        <conn input="combine1.list1" output="rotate1"/>
+    </node>
+</ndbx>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<workspace>
+    <properties>
+        <property class="java.lang.Integer" name="MONITOR_ARRANGEMENT" value="5"/>
+    </properties>
+    <monitors>
+        <monitor number="0">
+            <documents>
+                <document path="1/Untitled18.ndbx">
+                    <properties>
+                        <property class="java.lang.Boolean" name="locked" value="true"/>
+                        <property class="java.lang.Boolean" name="sandboxed" value="false"/>
+                        <property class="java.lang.Boolean" name="movement" value="true"/>
+                    </properties>
+                </document>
+                <document path="1/Untitled17.ndbx">
+                    <properties>
+                        <property class="java.lang.Boolean" name="locked" value="true"/>
+                        <property class="java.lang.Boolean" name="sandboxed" value="false"/>
+                        <property class="java.lang.Boolean" name="movement" value="true"/>
+                    </properties>
+                </document>
+            </documents>
+        </monitor>
+        <monitor number="1">
+            <documents>
+                <document path="2/Tube Torus.ndbx">
+                    <properties>
+                        <property class="java.lang.Boolean" name="locked" value="true"/>
+                        <property class="java.lang.Boolean" name="sandboxed" value="false"/>
+                        <property class="java.lang.Boolean" name="movement" value="true"/>
+                    </properties>
+                </document>
+                <document path="2/Seed of Life.ndbx">
+                    <properties>
+                        <property class="java.lang.Boolean" name="locked" value="true"/>
+                        <property class="java.lang.Boolean" name="sandboxed" value="false"/>
+                        <property class="java.lang.Boolean" name="movement" value="true"/>
+                    </properties>
+                </document>
+                <document path="2/Untitled30.ndbx">
+                    <properties>
+                        <property class="java.lang.Boolean" name="locked" value="true"/>
+                        <property class="java.lang.Boolean" name="sandboxed" value="false"/>
+                        <property class="java.lang.Boolean" name="movement" value="true"/>
+                    </properties>
+                </document>
+            </documents>
+        </monitor>
+        <monitor number="2">
+            <documents>
+                <document path="3/Untitled31.ndbx">
+                    <properties>
+                        <property class="java.lang.Boolean" name="locked" value="true"/>
+                        <property class="java.lang.Boolean" name="sandboxed" value="false"/>
+                        <property class="java.lang.Boolean" name="movement" value="true"/>
+                    </properties>
+                </document>
+                <document path="3/Flower of Life.ndbx">
+                    <properties>
+                        <property class="java.lang.Boolean" name="locked" value="true"/>
+                        <property class="java.lang.Boolean" name="sandboxed" value="false"/>
+                        <property class="java.lang.Boolean" name="movement" value="true"/>
+                    </properties>
+                </document>
+                <document path="3/Untitled16.ndbx">
+                    <properties>
+                        <property class="java.lang.Boolean" name="locked" value="true"/>
+                        <property class="java.lang.Boolean" name="sandboxed" value="false"/>
+                        <property class="java.lang.Boolean" name="movement" value="true"/>
+                    </properties>
+                </document>
+            </documents>
+        </monitor>
+        <monitor number="3">
+            <documents>
+                <document path="4/Untitled127.ndbx">
+                    <properties>
+                        <property class="java.lang.Boolean" name="locked" value="true"/>
+                        <property class="java.lang.Boolean" name="sandboxed" value="false"/>
+                        <property class="java.lang.Boolean" name="movement" value="true"/>
+                    </properties>
+                </document>
+                <document path="4/Untitled33.ndbx">
+                    <properties>
+                        <property class="java.lang.Boolean" name="locked" value="true"/>
+                        <property class="java.lang.Boolean" name="sandboxed" value="false"/>
+                        <property class="java.lang.Boolean" name="movement" value="true"/>
+                    </properties>
+                </document>
+            </documents>
+        </monitor>
+        <monitor number="4">
+            <documents>
+                <document path="5/Untitled128.ndbx">
+                    <properties>
+                        <property class="java.lang.Boolean" name="locked" value="true"/>
+                        <property class="java.lang.Boolean" name="sandboxed" value="false"/>
+                        <property class="java.lang.Boolean" name="movement" value="true"/>
+                    </properties>
+                </document>
+                <document path="5/Untitled32.ndbx">
+                    <properties>
+                        <property class="java.lang.Boolean" name="locked" value="true"/>
+                        <property class="java.lang.Boolean" name="sandboxed" value="false"/>
+                        <property class="java.lang.Boolean" name="movement" value="true"/>
+                    </properties>
+                </document>
+            </documents>
+        </monitor>
+        <monitor number="5">
+            <documents>
+                <document path="6/Untitled129.ndbx">
+                    <properties>
+                        <property class="java.lang.Boolean" name="locked" value="true"/>
+                        <property class="java.lang.Boolean" name="sandboxed" value="false"/>
+                        <property class="java.lang.Boolean" name="movement" value="true"/>
+                    </properties>
+                </document>
+                <document path="6/Untitled34.ndbx">
+                    <properties>
+                        <property class="java.lang.Boolean" name="locked" value="true"/>
+                        <property class="java.lang.Boolean" name="sandboxed" value="false"/>
+                        <property class="java.lang.Boolean" name="movement" value="true"/>
+                    </properties>
+                </document>
+            </documents>
+        </monitor>
+    </monitors>
+</workspace>

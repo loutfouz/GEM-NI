@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="6eb1325a-158c-4547-b401-16b0065df283">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network" renderedChild="node1">
+        <node name="node1" position="2.00,2.00" prototype="corevector.null" uuid="684f5ef1-06c7-4e9f-8cb5-a6f7fce7ea23"/>
+        <node name="node2" position="2.00,4.00" prototype="corevector.null" uuid="b5334ad4-02c6-4fd7-a31b-be53d374fb6a"/>
+        <node name="node3" position="2.00,6.00" prototype="corevector.null" uuid="5f6f9bdd-4252-44d0-92b1-82a29e6c8612"/>
+        <conn input="node3.shape" output="node2"/>
+    </node>
+</ndbx>

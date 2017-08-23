@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="17289221-68af-4279-8785-fae4e95161c9">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network" renderedChild="copy1">
+        <node name="connect1" position="9.00,5.00" prototype="corevector.connect" uuid="b3806f98-2bd0-41f5-80e3-fdd083e64f0d">
+            <port name="closed" type="boolean" value="false"/>
+        </node>
+        <node name="coordinates1" position="9.00,3.00" prototype="math.coordinates" uuid="69e3b887-4a0c-4c7f-b525-a2ee51a48c9a">
+            <port name="distance" type="float" value="4.0"/>
+        </node>
+        <node name="copy1" position="9.00,7.00" prototype="corevector.copy" uuid="db884945-557c-457c-bb78-bff36236ece6">
+            <port name="copies" type="int" value="50"/>
+            <port name="rotate" type="float" value="161.0"/>
+            <port name="scale" type="point" value="0.70,0.70"/>
+        </node>
+        <node name="number1" position="15.00,2.00" prototype="math.number" uuid="9bfb66c1-a015-4415-a631-64a12ecbfd16">
+            <port name="value" type="float" value="50.0"/>
+        </node>
+        <node name="number2" position="9.00,-1.00" prototype="math.number" uuid="ca69676d-70fb-42ab-a936-11a057fd7e08">
+            <port name="value" type="float" value="10.0"/>
+        </node>
+        <node name="sample1" position="9.00,1.00" prototype="math.sample" uuid="2a9f0b10-ea79-4f8a-a461-0576e646839f">
+            <port name="end" type="float" value="360.0"/>
+        </node>
+        <conn input="coordinates1.angle" output="sample1"/>
+        <conn input="connect1.points" output="coordinates1"/>
+        <conn input="copy1.shape" output="connect1"/>
+        <conn input="sample1.amount" output="number2"/>
+        <conn input="copy1.copies" output="number1"/>
+    </node>
+</ndbx>

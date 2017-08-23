@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="72afa6ca-7722-46aa-b9b4-5b9d08416e54">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network" renderedChild="line_angle1">
+        <node name="gapsize" prototype="math.number" uuid="e6919003-0fab-4a9a-aeb2-e97ca02366c2">
+            <port name="value" type="float" value="30.0"/>
+        </node>
+        <node name="integer1" position="12.00,10.00" prototype="math.integer" uuid="3d2ada11-e263-4829-b37a-30ecc0e1ecae"/>
+        <node name="line_angle1" position="5.00,18.00" prototype="corevector.line_angle" uuid="b1f31209-e608-474f-963d-ff78626e1103">
+            <port name="distance" type="float" value="30.0"/>
+        </node>
+        <node name="make_point1" position="5.00,7.00" prototype="corevector.make_point" uuid="32158f03-92f2-43ce-9eea-a966c786ccd7"/>
+        <node name="mod1" position="12.00,12.00" prototype="math.mod" uuid="9e71f0f1-2e91-4c8c-9821-d578051c8832">
+            <port name="value2" type="float" value="2.0"/>
+        </node>
+        <node name="multiply1" position="1.00,5.00" prototype="math.multiply" uuid="9ddba530-81be-4a01-8949-6bb530e02e94"/>
+        <node name="multiply2" position="7.00,5.00" prototype="math.multiply" uuid="d2f9a95b-1c11-4451-8f10-8a9b8e9d4ed4"/>
+        <node name="multiply4" position="12.00,6.00" prototype="math.multiply" uuid="77bc4307-f2b9-40c9-a16a-d86fe142848e"/>
+        <node name="multiply5" position="11.00,14.00" prototype="math.multiply" uuid="6447d815-62a9-4284-b76b-0af8760a10ca">
+            <port name="value2" type="float" value="90.0"/>
+        </node>
+        <node name="random_numbers1" position="12.00,8.00" prototype="math.random_numbers" uuid="400cdf59-4317-4b58-92aa-85a04f89a481">
+            <port name="seed" type="int" value="24"/>
+        </node>
+        <node name="range1" position="13.00,1.00" prototype="math.range" uuid="696812b1-8b08-4146-965e-70f422de029b">
+            <port name="end" type="float" value="11.0"/>
+        </node>
+        <node name="repeat1" position="13.00,3.00" prototype="list.repeat" uuid="2d8cd8e3-111a-412f-a905-361d9685fcab">
+            <port name="amount" type="int" value="10"/>
+        </node>
+        <node name="repeat2" position="8.00,3.00" prototype="list.repeat" uuid="f838efda-65dc-4ea4-b495-dfd4ba12af23">
+            <port name="amount" type="int" value="10"/>
+            <port name="per_item" type="boolean" value="true"/>
+        </node>
+        <node name="rows" position="8.00,-1.00" prototype="math.number" uuid="97d3c989-ef03-4d35-89b7-8fd5d16ae84a">
+            <port name="value" type="float" value="10.0"/>
+        </node>
+        <conn input="repeat1.list" output="range1"/>
+        <conn input="repeat2.list" output="range1"/>
+        <conn input="multiply2.value1" output="repeat2"/>
+        <conn input="multiply1.value1" output="repeat1"/>
+        <conn input="make_point1.x" output="multiply1"/>
+        <conn input="make_point1.y" output="multiply2"/>
+        <conn input="multiply2.value2" output="gapsize"/>
+        <conn input="multiply1.value2" output="gapsize"/>
+        <conn input="repeat1.amount" output="rows"/>
+        <conn input="repeat2.amount" output="rows"/>
+        <conn input="range1.end" output="rows"/>
+        <conn input="line_angle1.position" output="make_point1"/>
+        <conn input="integer1.value" output="random_numbers1"/>
+        <conn input="multiply4.value1" output="rows"/>
+        <conn input="multiply4.value2" output="rows"/>
+        <conn input="random_numbers1.amount" output="multiply4"/>
+        <conn input="random_numbers1.end" output="multiply4"/>
+        <conn input="mod1.value1" output="integer1"/>
+        <conn input="multiply5.value1" output="mod1"/>
+        <conn input="line_angle1.angle" output="multiply5"/>
+        <conn input="line_angle1.distance" output="gapsize"/>
+    </node>
+</ndbx>

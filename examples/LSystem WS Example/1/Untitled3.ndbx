@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="71248dc7-53f8-42cc-83db-f6fed43f2775">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <link href="python:../../LSystem Split/lsystem.py" rel="functions"/>
+    <link href="python:../../LSystem Split/lrules.py" rel="functions"/>
+    <link href="python:../../LSystem Split/lgeometry.py" rel="functions"/>
+    <link href="python:../../LSystem Split/lpath.py" rel="functions"/>
+    <node name="root" prototype="core.network" renderedChild="compound1">
+        <node name="arc1" position="29.00,3.00" prototype="corevector.arc" uuid="675549e8-e1d9-4179-96fc-6b4120faba67">
+            <port name="width" type="float" value="20.0"/>
+            <port name="height" type="float" value="20.0"/>
+            <port name="degrees" type="float" value="152.0"/>
+        </node>
+        <node name="compound1" position="35.00,9.00" prototype="corevector.compound" uuid="3344b704-2209-4b2f-a26a-56ccc2180a00"/>
+        <node name="length" position="22.00,0.00" prototype="math.number" uuid="8fac32de-be38-4ed2-9102-684a02addbbb">
+            <port name="value" type="float" value="12.0"/>
+        </node>
+        <node category="geometry" function="lgeometry/lgeometry" image="lsystem.png" name="lgeometry" outputType="geometry" position="30.00,7.00" uuid="12e60316-72f4-45f4-8d00-e91bc98f4ab6">
+            <port name="x" range="value" type="float" value="0.0" widget="float"/>
+            <port name="y" range="value" type="float" value="0.0" widget="float"/>
+            <port name="angle" range="value" type="float" value="60.0" widget="float"/>
+            <port name="angleScale" range="value" type="float" value="0.0" widget="float"/>
+            <port name="length" range="value" type="float" value="9.0" widget="float"/>
+            <port name="thicknessScale" range="value" type="float" value="0.0" widget="float"/>
+            <port name="lengthScale" range="value" type="float" value="0.0" widget="float"/>
+            <port name="fullRule" range="value" type="string" value="" widget="string"/>
+            <port name="geometry" range="value" type="geometry" widget="none"/>
+        </node>
+        <node category="geometry" function="lgeometry/lgeometry" image="lsystem.png" name="lgeometry1" outputType="geometry" position="38.00,7.00" uuid="2e11dcb2-5871-4e12-a0f5-2cafc69a84d9">
+            <port name="x" range="value" type="float" value="457.0" widget="float"/>
+            <port name="y" range="value" type="float" value="0.0" widget="float"/>
+            <port name="angle" range="value" type="float" value="60.0" widget="float"/>
+            <port name="angleScale" range="value" type="float" value="0.0" widget="float"/>
+            <port name="length" range="value" type="float" value="9.0" widget="float"/>
+            <port name="thicknessScale" range="value" type="float" value="0.0" widget="float"/>
+            <port name="lengthScale" range="value" type="float" value="0.0" widget="float"/>
+            <port name="fullRule" range="value" type="string" value="" widget="string"/>
+            <port name="geometry" range="value" type="geometry" widget="none"/>
+        </node>
+        <node category="geometry" function="lrules/lrules" image="lsystem.png" name="lrules" outputType="geometry" position="34.00,-1.00" uuid="f22b24ac-dcad-4faf-ac4b-5f4f29199300">
+            <port min="0.0" name="generations" range="value" type="int" value="5" widget="int"/>
+            <port name="premise" range="value" type="string" value="A" widget="string"/>
+            <port name="rule1" range="value" type="string" value="A=B-A-B" widget="string"/>
+            <port name="rule2" range="value" type="string" value="B=A+B+A" widget="string"/>
+            <port name="rule3" range="value" type="string" value="" widget="string"/>
+        </node>
+        <node name="polygon1" position="40.00,3.00" prototype="corevector.polygon" uuid="a5a0b8cb-bfe3-417f-b01a-4eea0c0f2840">
+            <port name="radius" type="float" value="10.0"/>
+        </node>
+        <conn input="lgeometry.fullRule" output="lrules"/>
+        <conn input="lgeometry.geometry" output="arc1"/>
+        <conn input="lgeometry.length" output="length"/>
+        <conn input="lgeometry1.geometry" output="polygon1"/>
+        <conn input="lgeometry1.fullRule" output="lrules"/>
+        <conn input="lgeometry1.length" output="length"/>
+        <conn input="compound1.shape2" output="lgeometry1"/>
+        <conn input="compound1.shape1" output="lgeometry"/>
+    </node>
+</ndbx>

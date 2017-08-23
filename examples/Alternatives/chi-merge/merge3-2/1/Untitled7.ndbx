@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="16" type="file" uuid="53f39622-55f7-4387-974a-f10eee931a21">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network" renderedChild="compound1">
+        <node name="add1" position="15.00,7.00" prototype="math.add" uuid="7856df1a-6fc0-4900-8270-fc537760c5d7">
+            <port name="value2" type="float" value="10.0"/>
+        </node>
+        <node name="add2" position="15.00,4.00" prototype="math.add" uuid="7d8b2d22-b29f-4633-a3d6-8274a0fc2ce2">
+            <port name="value2" type="float" value="10.0"/>
+        </node>
+        <node name="compound1" position="9.00,8.00" prototype="corevector.compound" uuid="c4ab00db-c421-43bd-9663-a1d0b4401cbe">
+            <port name="function" type="string" value="subtracted"/>
+        </node>
+        <node name="ellipse1" position="9.00,4.00" prototype="corevector.ellipse" uuid="c76e2533-d86a-4b7a-9842-9a7aabf6eb34">
+            <port name="width" type="float" value="20.0"/>
+            <port name="height" type="float" value="20.0"/>
+        </node>
+        <node name="ellipse2" position="9.00,6.00" prototype="corevector.ellipse" uuid="8dca772b-8b63-49dd-9518-60f54e25b9ea">
+            <port name="width" type="float" value="10.0"/>
+            <port name="height" type="float" value="10.0"/>
+        </node>
+        <node name="grid1" position="9.00,0.00" prototype="corevector.grid" uuid="632822cd-6683-4f2a-9b9c-5d76bfc586f5"/>
+        <node name="make_numbers1" position="17.00,1.00" prototype="math.make_numbers" uuid="61cf5589-90e5-4d5d-af76-e964ab80c415">
+            <port name="separator" type="string" value=","/>
+        </node>
+        <node name="make_point1" position="15.00,8.00" prototype="corevector.make_point" uuid="9ce08b33-225c-4c05-a213-da241de4295d"/>
+        <node name="multiply1" position="14.00,-2.00" prototype="math.multiply" uuid="704f07c5-752c-44d1-866e-85accfdceb6a"/>
+        <node name="number1" position="9.00,-2.00" prototype="math.number" uuid="cc431529-0f36-4831-b952-34105dbddc34">
+            <port name="value" type="float" value="10.0"/>
+        </node>
+        <node name="point1" position="13.00,1.00" prototype="corevector.point" uuid="972f4005-7d08-4bec-8017-fd9823a1463d"/>
+        <node name="random_numbers1" position="15.00,6.00" prototype="math.random_numbers" uuid="837cc32c-8872-41bb-8c17-692e96d2cb73">
+            <port name="start" type="float" value="-5.0"/>
+            <port name="end" type="float" value="5.0"/>
+        </node>
+        <node name="random_numbers2" position="14.00,-1.00" prototype="math.random_numbers" uuid="6aabde47-7b8f-41b2-9c85-29cbd7c17332">
+            <port name="start" type="float" value="-5.0"/>
+            <port name="end" type="float" value="5.0"/>
+        </node>
+        <node name="shift1" position="15.00,2.00" prototype="list.shift" uuid="e24578e6-89c6-4846-93d1-8860526ba8fe"/>
+        <node name="string1" position="14.00,0.00" prototype="string.string" uuid="59d708f4-b8c6-409d-b8a3-aebe15e67f16"/>
+        <node name="take_every1" position="15.00,5.00" prototype="list.take_every" uuid="1ece07d4-6abf-4600-95dd-a0facf175a33">
+            <port name="n" type="int" value="2"/>
+        </node>
+        <node name="take_every2" position="15.00,3.00" prototype="list.take_every" uuid="c2cd0d7b-3509-4b44-a2b0-310c6aa8e842">
+            <port name="n" type="int" value="2"/>
+        </node>
+        <node name="wiggle1" position="9.00,2.00" prototype="corevector.wiggle" uuid="5c1773e2-0452-4a7c-a835-9a08588c005d">
+            <port name="seed" type="int" value="1"/>
+        </node>
+        <conn input="wiggle1.shape" output="grid1"/>
+        <conn input="compound1.shape1" output="ellipse1"/>
+        <conn input="compound1.shape2" output="ellipse2"/>
+        <conn input="ellipse1.position" output="wiggle1"/>
+        <conn input="point1.value" output="wiggle1"/>
+        <conn input="make_numbers1.string" output="string1"/>
+        <conn input="string1.value" output="point1"/>
+        <conn input="take_every1.list" output="make_numbers1"/>
+        <conn input="shift1.list" output="make_numbers1"/>
+        <conn input="take_every2.list" output="shift1"/>
+        <conn input="add1.value1" output="take_every1"/>
+        <conn input="grid1.columns" output="number1"/>
+        <conn input="grid1.rows" output="number1"/>
+        <conn input="multiply1.value1" output="number1"/>
+        <conn input="multiply1.value2" output="number1"/>
+        <conn input="random_numbers1.amount" output="multiply1"/>
+        <conn input="add1.value2" output="random_numbers1"/>
+        <conn input="make_point1.x" output="add1"/>
+        <conn input="ellipse2.position" output="make_point1"/>
+        <conn input="random_numbers2.amount" output="multiply1"/>
+        <conn input="add2.value2" output="random_numbers2"/>
+        <conn input="add2.value1" output="take_every2"/>
+        <conn input="make_point1.y" output="add2"/>
+    </node>
+</ndbx>
